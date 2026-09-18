@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>علی کرمی | معمار زیرساخت شبکه و توسعه‌دهنده چندسکویی</title>
+  <meta name="description" content="وب‌سایت شخصی و پورتفولیوی علی کرمی؛ طراح خلاق، توسعه‌دهنده چندسکویی و معمار زیرساخت شبکه و سرور." />
+  <meta property="og:title" content="علی کرمی | معمار زیرساخت شبکه و توسعه‌دهنده چندسکویی" />
+  <meta property="og:description" content="ترکیب ظرافت هنری در طراحی بصری با استانداردهای مهندسی مدرن در نرم‌افزار و زیرساخت‌های پایدار اینترنت." />
+  <meta property="og:type" content="website" />
+
+  <!-- Tailwind CSS CDN for instant GitHub Pages standalone execution -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cyan: { DEFAULT: '#00F5FF', dim: '#00bcd4' },
+            violet: { DEFAULT: '#8B5CF6' },
+            emerald: { DEFAULT: '#10B981' },
+            dark: { 900: '#060911', 800: '#0f131d', 700: '#171b26' }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Custom CSS -->
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body class="bg-[#060911] text-[#F8FAFC] antialiased selection:bg-[#00F5FF]/30 selection:text-[#00F5FF]">
+
+  <!-- Top Ambient Glow -->
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-gradient-to-b from-[#8B5CF6]/15 via-[#00F5FF]/10 to-transparent blur-3xl pointer-events-none -z-10"></div>
+
+  <!-- HEADER / NAVBAR -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-[#060911]/80 border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Right: Brand / Identity -->
+      <a href="index.html" class="flex items-center gap-3 group text-decoration-none">
+        <img src="assets/logo.svg" alt="Ali Karami Logo" class="w-9 h-9 transition-transform duration-300 group-hover:scale-105" />
+        <div class="flex flex-col">
+          <div class="flex items-center gap-2">
+            <span class="text-base font-bold tracking-tight text-white group-hover:text-[#00F5FF] transition-colors">علی کرمی</span>
+            <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-[#00F5FF]/10 text-[#00F5FF] border border-[#00F5FF]/20 tracking-wider">ARCHITECT</span>
+          </div>
+          <span class="text-[10px] font-mono tracking-widest text-[#94A3B8] uppercase">MULTI-DISCIPLINARY TECH CREATOR</span>
+        </div>
+      </a>
+
+      <!-- Center: Navigation Links -->
+      <nav class="hidden md:flex items-center gap-1 bg-[#0f172a]/60 p-1.5 rounded-xl border border-white/5 backdrop-blur-md">
+        <a href="index.html" class="nav-link active px-4 py-2 text-sm font-medium rounded-lg">صفحه اصلی</a>
+        <a href="products.html" class="nav-link px-4 py-2 text-sm font-medium rounded-lg">محصولات و خدمات</a>
+        <a href="about.html" class="nav-link px-4 py-2 text-sm font-medium rounded-lg">درباره من</a>
+        <a href="contact.html" class="nav-link px-4 py-2 text-sm font-medium rounded-lg">تماس و سفارش</a>
+      </nav>
+
+      <!-- Left: Status & Action -->
+      <div class="hidden sm:flex items-center gap-3">
+        <div class="status-pill">
+          <span class="status-dot"></span>
+          <span class="font-mono text-xs text-[#34D399]">AVAILABLE FOR NEW PROJECTS</span>
+          <span class="text-xs text-[#34D399]/80">●</span>
+        </div>
+        <button data-open-order data-service="general" class="btn-primary text-xs py-2 px-4 shadow-cyan">
+          ثبت سفارش تلگرام
+        </button>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg bg-white/5 border border-white/10 text-[#94A3B8] hover:text-white" aria-label="Toggle Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-6 border-b border-white/10 bg-[#0a0e1a]/95 flex-col gap-2">
+      <a href="index.html" class="nav-link active py-2.5 px-3 rounded-lg text-sm">صفحه اصلی</a>
+      <a href="products.html" class="nav-link py-2.5 px-3 rounded-lg text-sm">محصولات و خدمات</a>
+      <a href="about.html" class="nav-link py-2.5 px-3 rounded-lg text-sm">درباره من</a>
+      <a href="contact.html" class="nav-link py-2.5 px-3 rounded-lg text-sm">تماس و سفارش</a>
+      <div class="pt-3 border-t border-white/5 flex flex-col gap-2">
+        <div class="status-pill justify-center">
+          <span class="status-dot"></span>
+          <span>آماده پذیرش پروژه‌های جدید</span>
+        </div>
+        <button data-open-order data-service="general" class="btn-primary text-xs py-2.5 w-full justify-center">
+          ثبت سفارش تلگرام
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-24">
+
+    <!-- HERO SECTION -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center pt-4">
+      
+      <!-- Right Column (In RTL: Text & Roles) -->
+      <div class="lg:col-span-7 space-y-8 text-right order-2 lg:order-1">
+        
+        <!-- Status Tag for Mobile -->
+        <div class="inline-flex sm:hidden items-center gap-2 status-pill">
+          <span class="status-dot"></span>
+          <span class="text-xs">AVAILABLE FOR NEW PROJECTS ● آماده پذیرش پروژه‌ها</span>
+        </div>
+
+        <div class="space-y-4">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+            سلام، من <span class="text-transparent bg-clip-text bg-gradient-to-l from-[#00F5FF] via-white to-[#8B5CF6]">علی هستم</span>
+          </h1>
+          <h2 class="text-xl sm:text-2xl font-bold text-[#E2E8F0] tracking-tight">
+            طراح خلاق، توسعه‌دهنده چندسکویی و معمار زیرساخت شبکه
+          </h2>
+          <p class="text-base sm:text-lg text-[#94A3B8] leading-relaxed max-w-2xl">
+            ترکیب ظرافت هنری در طراحی بصری با استانداردهای مهندسی مدرن در نرم‌افزار و زیرساخت‌های پایدار اینترنت. راهکارهای دیجیتال تمام‌عیار از ایده تا اجرا و پشتیبانی شبکه‌ای.
+          </p>
+        </div>
+
+        <!-- 4 Role Cards Grid (Matches Screenshot) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+          
+          <!-- Graphic Designer -->
+          <div class="glass-card p-3.5 flex items-center justify-between gap-3 group">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-[#8B5CF6]/15 border border-[#8B5CF6]/30 flex items-center justify-center text-[#8B5CF6] group-hover:scale-105 transition-transform">
+                <!-- Palette icon -->
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M7 21a4 4 0 01-4-4 11.042 11.042 0 014.28-8.72l6.23-5.22a2 2 0 012.8 2.8l-1.4 1.4M16 11l4 4a4 4 0 01-4 4H7"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-white group-hover:text-[#00F5FF] transition-colors">Graphic Designer</h4>
+                <p class="text-xs text-[#94A3B8]">هویت بصری، UI/UX و دیزاین سیستم</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Web Developer -->
+          <div class="glass-card p-3.5 flex items-center justify-between gap-3 group">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-[#00F5FF]/15 border border-[#00F5FF]/30 flex items-center justify-center text-[#00F5FF] group-hover:scale-105 transition-transform">
+                <!-- Monitor / Code icon -->
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-white group-hover:text-[#00F5FF] transition-colors">Web Developer</h4>
+                <p class="text-xs text-[#94A3B8]">فرانت‌اند مدرن، وب‌اپلیکیشن پرسرعت</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- App Developer -->
+          <div class="glass-card p-3.5 flex items-center justify-between gap-3 group">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-[#10B981]/15 border border-[#10B981]/30 flex items-center justify-center text-[#10B981] group-hover:scale-105 transition-transform">
+                <!-- Phone icon -->
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-white group-hover:text-[#00F5FF] transition-colors">App Developer</h4>
+                <p class="text-xs text-[#94A3B8]">اپلیکیشن‌های اندرویدی و مدرن</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Network Expert -->
+          <div class="glass-card p-3.5 flex items-center justify-between gap-3 group">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-[#38BDF8]/15 border border-[#38BDF8]/30 flex items-center justify-center text-[#38BDF8] group-hover:scale-105 transition-transform">
+                <!-- Server / Wifi icon -->
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-white group-hover:text-[#00F5FF] transition-colors">Network Expert</h4>
+                <p class="text-xs text-[#94A3B8]">سرور ابری و امنیت و سازنده شبکه و کانفیگ</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- CTA Buttons (Matches Screenshot) -->
+        <div class="flex flex-wrap items-center gap-4 pt-4">
+          <button data-open-order data-service="general" class="btn-primary text-sm px-6 py-3.5 shadow-lg group">
+            <span>درخواست همکاری و مشاوره</span>
+            <svg class="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </button>
+
+          <a href="#portfolio" class="btn-secondary text-sm px-6 py-3.5 group">
+            <span>مشاهده نمونه‌کارها</span>
+            <svg class="w-4 h-4 text-[#94A3B8] group-hover:text-[#00F5FF] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Left Column: Profile Card (Matches Screenshot) -->
+      <div class="lg:col-span-5 order-1 lg:order-2 flex justify-center lg:justify-end">
+        <div class="w-full max-w-md glass-panel p-6 sm:p-7 space-y-6 glow-card">
+          
+          <!-- Profile Header -->
+          <div class="flex items-center gap-4">
+            <!-- Avatar with glow border -->
+            <div class="relative">
+              <img src="assets/avatar.jpg" alt="علی کرمی" class="w-20 h-20 rounded-full object-cover border-2 border-[#00F5FF]/40 shadow-lg shadow-[#00F5FF]/20" />
+              <span class="absolute bottom-0 left-0 w-4 h-4 rounded-full bg-[#10B981] border-2 border-[#060911]"></span>
+            </div>
+            
+            <div class="space-y-1">
+              <div class="flex items-center gap-2">
+                <h3 class="text-xl font-bold text-white">علی کرمی</h3>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#8B5CF6]/20 text-[#C4B5FD] border border-[#8B5CF6]/30 font-semibold">SENIOR ARCHITECT</span>
+              </div>
+              <p class="text-xs text-[#94A3B8] flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-[#00F5FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span>کرمانشاه / پاسخ‌گویی کمتر از 24 ساعت</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- 3 Stats Block (Matches Screenshot) -->
+          <div class="grid grid-cols-3 gap-3 pt-3 border-t border-white/10 text-center">
+            
+            <!-- 4+ -->
+            <div class="bg-black/30 rounded-xl p-3 border border-white/5 hover:border-[#00F5FF]/30 transition-colors">
+              <span class="stat-num text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#00F5FF] to-white">4+</span>
+              <p class="text-[11px] text-[#94A3B8] mt-1">سال تجربه تخصصی</p>
+            </div>
+
+            <!-- 15+ -->
+            <div class="bg-black/30 rounded-xl p-3 border border-white/5 hover:border-[#8B5CF6]/30 transition-colors">
+              <span class="stat-num text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#8B5CF6] to-white">15+</span>
+              <p class="text-[11px] text-[#94A3B8] mt-1">پروژه موفق پیاده‌سازی شده</p>
+            </div>
+
+            <!-- 100% -->
+            <div class="bg-black/30 rounded-xl p-3 border border-white/5 hover:border-[#10B981]/30 transition-colors">
+              <span class="stat-num text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#10B981] to-white">100%</span>
+              <p class="text-[11px] text-[#94A3B8] mt-1">پایبندی به موعد تحویل</p>
+            </div>
+
+          </div>
+
+          <!-- Live Server Ping / Telemetry Indicator -->
+          <div class="p-3 rounded-lg bg-black/40 border border-white/5 flex items-center justify-between text-xs font-mono text-[#94A3B8]">
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-[#10B981] animate-ping"></span>
+              <span class="text-[#34D399]">SYSTEM STABLE</span>
+            </div>
+            <span class="text-[11px]">PING: 18ms // ENCRYPTED</span>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SECTION 2: PILLARS OF MASTERY -->
+    <section id="services" class="space-y-8">
+      
+      <!-- Section Header -->
+      <div class="text-right space-y-2">
+        <div class="section-label">
+          <span>PILLARS OF MASTERY</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          حوزه‌های تخصصی و خدمات من
+        </h2>
+      </div>
+
+      <!-- 4 Pillar Cards Grid (Matches Screenshot: Pillar 01 to 04) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- PILLAR 01 // VISUAL ART -->
+        <div class="glass-panel p-6 flex flex-col justify-between space-y-6 group hover:-translate-y-1 transition-all">
+          <div class="space-y-4">
+            <!-- Icon -->
+            <div class="w-12 h-12 rounded-xl bg-[#8B5CF6]/15 border border-[#8B5CF6]/30 flex items-center justify-center text-[#8B5CF6] group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] transition-all">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M7 21a4 4 0 01-4-4 11.042 11.042 0 014.28-8.72l6.23-5.22a2 2 0 012.8 2.8l-1.4 1.4M16 11l4 4a4 4 0 01-4 4H7"></path>
+              </svg>
+            </div>
+            <span class="text-[11px] font-mono tracking-wider text-[#A78BFA] font-bold block">PILLAR 01 // VISUAL ART</span>
+            <h3 class="text-lg font-bold text-white group-hover:text-[#00F5FF] transition-colors">
+              طراحی گرافیک و UI/UX
+            </h3>
+            <p class="text-xs sm:text-sm text-[#94A3B8] leading-relaxed">
+              طراحی هویت بصری یکپارچه، لوگوتایپ مفهومی، دیزاین سیستم‌های استاندارد فیگما، رابط کاربری محصول و پوستر و متریال‌های تبلیغاتی با رویکرد مینیمال و اثرگذار.
+            </p>
+          </div>
+          <!-- Tech Tags -->
+          <div class="flex flex-wrap gap-1.5 pt-4 border-t border-white/5">
+            <span class="tech-tag">Photoshop</span>
+            <span class="tech-tag">Illustrator</span>
+            <span class="tech-tag">Design System</span>
+          </div>
+        </div>
+
+        <!-- PILLAR 02 // WEB DEV -->
+        <div class="glass-panel p-6 flex flex-col justify-between space-y-6 group hover:-translate-y-1 transition-all">
+          <div class="space-y-4">
+            <!-- Icon -->
+            <div class="w-12 h-12 rounded-xl bg-[#00F5FF]/15 border border-[#00F5FF]/30 flex items-center justify-center text-[#00F5FF] group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(0,245,255,0.3)] transition-all">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+              </svg>
+            </div>
+            <span class="text-[11px] font-mono tracking-wider text-[#00F5FF] font-bold block">PILLAR 02 // WEB DEV</span>
+            <h3 class="text-lg font-bold text-white group-hover:text-[#00F5FF] transition-colors">
+              توسعه وب مدرن و مقیاس‌پذیر
+            </h3>
+            <p class="text-xs sm:text-sm text-[#94A3B8] leading-relaxed">
+              برنامه‌نویسی وب‌سایت‌های فوق‌سریع و اپلیکیشن‌های تحت وب با معماری مدرن، بهینه‌سازی ۹۹+ در گوگل لایت‌هاوس، پیاده‌سازی بک‌اند روان و دیتابیس‌های پایدار.
+            </p>
+          </div>
+          <!-- Tech Tags -->
+          <div class="flex flex-wrap gap-1.5 pt-4 border-t border-white/5">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Next.js</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">Node.js</span>
+          </div>
+        </div>
+
+        <!-- PILLAR 03 // MOBILE APP -->
+        <div class="glass-panel p-6 flex flex-col justify-between space-y-6 group hover:-translate-y-1 transition-all">
+          <div class="space-y-4">
+            <!-- Icon -->
+            <div class="w-12 h-12 rounded-xl bg-[#10B981]/15 border border-[#10B981]/30 flex items-center justify-center text-[#10B981] group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(16,185,129,0.3)] transition-all">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <span class="text-[11px] font-mono tracking-wider text-[#34D399] font-bold block">PILLAR 03 // MOBILE APP</span>
+            <h3 class="text-lg font-bold text-white group-hover:text-[#00F5FF] transition-colors">
+              توسعه اپلیکیشن موبایل
+            </h3>
+            <p class="text-xs sm:text-sm text-[#94A3B8] leading-relaxed">
+              خلق اپلیکیشن‌های روان چندسکویی برای هر دو سیستم‌عامل Android و iOS، تجربه کاربری نیتیو، آفلاین-فرست و یکپارچه‌سازی بی‌نقص با وب‌سرویس‌ها.
+            </p>
+          </div>
+          <!-- Tech Tags -->
+          <div class="flex flex-wrap gap-1.5 pt-4 border-t border-white/5">
+            <span class="tech-tag">Flutter</span>
+            <span class="tech-tag">Dart</span>
+            <span class="tech-tag">React Native</span>
+            <span class="tech-tag">REST API</span>
+          </div>
+        </div>
+
+        <!-- PILLAR 04 // INFRASTRUCTURE -->
+        <div class="glass-panel p-6 flex flex-col justify-between space-y-6 group hover:-translate-y-1 transition-all">
+          <div class="space-y-4">
+            <!-- Icon -->
+            <div class="w-12 h-12 rounded-xl bg-[#38BDF8]/15 border border-[#38BDF8]/30 flex items-center justify-center text-[#38BDF8] group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(56,189,248,0.3)] transition-all">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+              </svg>
+            </div>
+            <span class="text-[11px] font-mono tracking-wider text-[#38BDF8] font-bold block">PILLAR 04 // INFRASTRUCTURE</span>
+            <h3 class="text-lg font-bold text-white group-hover:text-[#00F5FF] transition-colors">
+              شبکه، سرور و اتصال اینترنت
+            </h3>
+            <p class="text-xs sm:text-sm text-[#94A3B8] leading-relaxed">
+              کانفیگ پیشرفته و تجهیزات Cisco، مدیریت سرورهای لینوکس، پروتکل‌های مسیریابی، امن‌سازی ارتباطات، تونلینگ و راهکارهای تداوم ارتباطات سازمانی.
+            </p>
+          </div>
+          <!-- Tech Tags -->
+          <div class="flex flex-wrap gap-1.5 pt-4 border-t border-white/5">
+            <span class="tech-tag">MikroTik</span>
+            <span class="tech-tag">Cisco CCNA</span>
+            <span class="tech-tag">Linux SysAdmin</span>
+            <span class="tech-tag">WireGuard</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SECTION 3: CRAFTED PORTFOLIO -->
+    <section id="portfolio" class="space-y-8">
+      
+      <!-- Section Header -->
+      <div class="text-right space-y-2">
+        <div class="section-label">
+          <span>CRAFTED PORTFOLIO</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          گزیده‌ای از پروژه‌ها و خروجی‌ها
+        </h2>
+      </div>
+
+      <!-- 4 Project Cards Grid (Matches Screenshot) -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        
+        <!-- Project 1: داشبورد مانیتورینگ هوشمند زیرساخت شبکه -->
+        <div class="glass-panel p-6 sm:p-7 flex flex-col justify-between space-y-6 group">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-mono tracking-wider text-[#00F5FF] font-semibold">WEB & CLOUD DASHBOARD</span>
+              <button data-open-order data-service="web" class="text-xs font-mono text-[#94A3B8] hover:text-[#00F5FF] transition-colors flex items-center gap-1">
+                <span>سفارش این پروژه</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </button>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-[#00F5FF] transition-colors">
+              داشبورد مانیتورینگ هوشمند زیرساخت شبکه
+            </h3>
+            <p class="text-sm text-[#94A3B8] leading-relaxed">
+              سامانه تحت وب مانیتورینگ ترافیک زنده سرورها، تحلیل داده‌های یکپارچه و گزارش‌دهی لحظه‌ای با وب‌سوکت و معماری Next.js و Go.
+            </p>
+          </div>
+          <!-- Tech Tags at Bottom -->
+          <div class="flex items-center gap-2 pt-4 border-t border-white/5 font-mono text-xs text-[#94A3B8]">
+            <span class="text-[#00F5FF]">Next.js</span>
+            <span>•</span>
+            <span>Tailwind CSS</span>
+            <span>•</span>
+            <span>SNMP Protocol</span>
+          </div>
+        </div>
+
+        <!-- Project 2: اپلیکیشن های مدرن -->
+        <div class="glass-panel p-6 sm:p-7 flex flex-col justify-between space-y-6 group">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="text-[11px] font-mono tracking-wider text-[#34D399] font-semibold">ANDROID</span>
+                <span class="text-[11px] font-mono tracking-wider text-[#94A3B8]">CROSS-PLATFORM APP</span>
+              </div>
+              <button data-open-order data-service="app" class="text-xs font-mono text-[#94A3B8] hover:text-[#00F5FF] transition-colors flex items-center gap-1">
+                <span>سفارش این پروژه</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </button>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-[#00F5FF] transition-colors">
+              اپلیکیشن های مدرن
+            </h3>
+            <p class="text-sm text-[#94A3B8] leading-relaxed">
+              طراحی UI/UX کامل و پرسرعت بودن، پیاده‌سازی معماری تمیز با مدیریت وضعیت پیشرفته و استانداردهای متریال دیزاین.
+            </p>
+          </div>
+          <!-- Tech Tags at Bottom -->
+          <div class="flex items-center gap-2 pt-4 border-t border-white/5 font-mono text-xs text-[#94A3B8]">
+            <span class="text-[#34D399]">Flutter</span>
+            <span>•</span>
+            <span>Bloc Pattern</span>
+            <span>•</span>
+            <span>REST API</span>
+          </div>
+        </div>
+
+        <!-- Project 3: هویت بصری و دیزاین -->
+        <div class="glass-panel p-6 sm:p-7 flex flex-col justify-between space-y-6 group">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="text-[11px] font-mono tracking-wider text-[#C4B5FD] font-semibold">BRANDING & UI DESIGN</span>
+                <span class="text-[11px] font-mono tracking-wider text-[#94A3B8]">COMPLETE IDENTITY</span>
+              </div>
+              <button data-open-order data-service="graphic" class="text-xs font-mono text-[#94A3B8] hover:text-[#00F5FF] transition-colors flex items-center gap-1">
+                <span>سفارش این پروژه</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </button>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-[#00F5FF] transition-colors">
+              هویت بصری و دیزاین
+            </h3>
+            <p class="text-sm text-[#94A3B8] leading-relaxed">
+              طراحی لوگوتایپ هندسی، تایپوگرافی دوزبانه فارسی-انگلیسی، پالت رنگی سایبری و دیزاین گاید کامل برند و موکاپ‌های سه‌بعدی تعاملی.
+            </p>
+          </div>
+          <!-- Tech Tags at Bottom -->
+          <div class="flex items-center gap-2 pt-4 border-t border-white/5 font-mono text-xs text-[#94A3B8]">
+            <span class="text-[#C4B5FD]">Figma</span>
+            <span>•</span>
+            <span>Adobe Illustrator</span>
+            <span>•</span>
+            <span>3D Mockup</span>
+          </div>
+        </div>
+
+        <!-- Project 4: زیرساخت ارتباط امن چندشعبه‌ای MikroTik & Cisco -->
+        <div class="glass-panel p-6 sm:p-7 flex flex-col justify-between space-y-6 group">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="text-[11px] font-mono tracking-wider text-[#38BDF8] font-semibold">INFRASTRUCTURE</span>
+                <span class="text-[11px] font-mono tracking-wider text-[#94A3B8]">NETWORKING & SECURITY</span>
+              </div>
+              <button data-open-order data-service="network" class="text-xs font-mono text-[#94A3B8] hover:text-[#00F5FF] transition-colors flex items-center gap-1">
+                <span>سفارش این پروژه</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </button>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-[#00F5FF] transition-colors">
+              زیرساخت ارتباط امن چندشعبه‌ای MikroTik & Cisco
+            </h3>
+            <p class="text-sm text-[#94A3B8] leading-relaxed">
+              کانفیگ شبکه خصوصی، مسیریابی خودکار Failover اینترنت چندگانه، امنیت فایروال لایه ۷ و پشتیبان‌گیری خودکار کانفیگ.
+            </p>
+          </div>
+          <!-- Tech Tags at Bottom -->
+          <div class="flex items-center gap-2 pt-4 border-t border-white/5 font-mono text-xs text-[#94A3B8]">
+            <span class="text-[#38BDF8]">RouterOS</span>
+            <span>•</span>
+            <span>BGP</span>
+            <span>•</span>
+            <span>WireGuard</span>
+            <span>•</span>
+            <span>VLAN</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SECTION 4: CONNECT DIRECTLY & CHANNELS -->
+    <section id="contact" class="space-y-8">
+      
+      <!-- Section Header -->
+      <div class="text-right space-y-2">
+        <div class="section-label">
+          <span>CONNECT DIRECTLY</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          راه‌های ارتباطی و شبکه‌های اجتماعی
+        </h2>
+        <p class="text-sm sm:text-base text-[#94A3B8] max-w-3xl">
+          جهت سفارش پروژه جدید، مشاوره زیرساخت شبکه یا همکاری در طراحی و توسعه، از طریق درگاه‌های مستقیم زیر با من در تماس باشید.
+        </p>
+      </div>
+
+      <!-- Contact Layout (Matches Screenshot: Left main card + Right channels) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        
+        <!-- Left Big Card: Ready to start? (7 Cols in RTL) -->
+        <div class="lg:col-span-7 glass-panel p-6 sm:p-8 flex flex-col justify-between space-y-6 glow-card">
+          <div class="space-y-4">
+            <!-- Top Badges -->
+            <div class="flex flex-wrap items-center gap-3 text-xs font-mono">
+              <span class="text-[#00F5FF] font-semibold">FAST RESPONSE &lt; 24H</span>
+              <span class="text-white/20">|</span>
+              <span class="text-[#34D399] font-medium flex items-center gap-1.5">
+                STATUS: ACTIVE & ACCEPTING PROJECTS <span class="w-2 h-2 rounded-full bg-[#10B981] inline-block"></span>
+              </span>
+            </div>
+
+            <h3 class="text-2xl sm:text-3xl font-bold text-white">
+              آماده شروع پروژه‌ای پیشرو هستید؟
+            </h3>
+            
+            <p class="text-sm sm:text-base text-[#94A3B8] leading-relaxed">
+              پاسخ‌گویی سریع در تلگرام و اینستاگرام برای هماهنگی جلسات مشاوره، بررسی نیازمندی‌های سیستم و برآورد زمان‌بندی و هزینه‌ها به صورت کاملاً شفاف.
+            </p>
+          </div>
+
+          <!-- Buttons (Telegram & Instagram) -->
+          <div class="flex flex-wrap gap-4 pt-4 border-t border-white/5">
+            <a href="https://t.me/KhodeAli786" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm px-6 py-3.5 flex-1 justify-center">
+              <!-- Telegram Paper Plane -->
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+              </svg>
+              <span>پیام فوری در تلگرام (@KhodeAli786)</span>
+            </a>
+
+            <a href="https://instagram.com/ali08karami01" target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm px-6 py-3.5 flex-1 justify-center">
+              <!-- Instagram camera -->
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+              <span>صفحه اینستاگرام (@ali08karami01)</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right 2 Direct Channel Cards (5 Cols in RTL) -->
+        <div class="lg:col-span-5 space-y-4">
+          
+          <!-- Telegram Card -->
+          <a href="https://t.me/KhodeAli786" target="_blank" rel="noopener noreferrer" class="glass-panel p-6 flex items-center justify-between group hover:border-[#00F5FF]/50 transition-all text-decoration-none">
+            <div class="space-y-1">
+              <span class="text-[11px] font-mono text-[#00F5FF] font-semibold tracking-wider">تلگرام رسمی // TELEGRAM</span>
+              <h4 class="text-xl font-bold font-mono text-white group-hover:text-[#00F5FF] transition-colors" dir="ltr">@KhodeAli786</h4>
+              <p class="text-xs text-[#94A3B8]">ارتباط مستقیم، ارسال پیش‌نویس و سفارش کار</p>
+            </div>
+            <div class="w-12 h-12 rounded-xl bg-[#00F5FF]/10 border border-[#00F5FF]/30 flex items-center justify-center text-[#00F5FF] group-hover:scale-110 group-hover:bg-[#00F5FF]/20 transition-all">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+              </svg>
+            </div>
+          </a>
+
+          <!-- Instagram Card -->
+          <a href="https://instagram.com/ali08karami01" target="_blank" rel="noopener noreferrer" class="glass-panel p-6 flex items-center justify-between group hover:border-[#8B5CF6]/50 transition-all text-decoration-none">
+            <div class="space-y-1">
+              <span class="text-[11px] font-mono text-[#8B5CF6] font-semibold tracking-wider">اینستاگرام // INSTAGRAM</span>
+              <h4 class="text-xl font-bold font-mono text-white group-hover:text-[#8B5CF6] transition-colors" dir="ltr">@ali08karami01</h4>
+              <p class="text-xs text-[#94A3B8]">نمونه‌کارها، آموزش‌ها و استوری‌های روزمره</p>
+            </div>
+            <div class="w-12 h-12 rounded-xl bg-[#8B5CF6]/10 border border-[#8B5CF6]/30 flex items-center justify-center text-[#8B5CF6] group-hover:scale-110 group-hover:bg-[#8B5CF6]/20 transition-all">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </div>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-20 border-t border-white/5 bg-[#04070e] py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <img src="assets/logo.svg" alt="Ali Karami" class="w-7 h-7" />
+        <span class="text-sm font-semibold text-white">علی کرمی</span>
+        <span class="text-xs text-[#64748B]">| معمار چندسکویی و زیرساخت شبکه</span>
+      </div>
+
+      <div class="flex items-center gap-6 text-xs text-[#94A3B8]">
+        <a href="index.html" class="hover:text-[#00F5FF] transition-colors">صفحه اصلی</a>
+        <a href="products.html" class="hover:text-[#00F5FF] transition-colors">محصولات و خدمات</a>
+        <a href="about.html" class="hover:text-[#00F5FF] transition-colors">درباره من</a>
+        <a href="contact.html" class="hover:text-[#00F5FF] transition-colors">تماس و سفارش</a>
+      </div>
+
+      <p class="text-xs font-mono text-[#64748B]" dir="ltr">
+        &copy; 2026 Ali Karami. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- TELEGRAM ORDER MODAL (Interactive for Telegram Ordering requirement) -->
+  <div id="telegram-order-modal" class="modal-overlay">
+    <div class="modal-container text-right">
+      <button id="modal-close-btn" class="modal-close-btn" aria-label="Close modal">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
+      <div class="space-y-5">
+        <div>
+          <span class="text-xs font-mono text-[#00F5FF] font-semibold">TELEGRAM DIRECT DISPATCH // سفارش آنلاین</span>
+          <h3 class="text-xl font-bold text-white mt-1">ثبت سفارش و پیام مستقیم در تلگرام</h3>
+          <p class="text-xs text-[#94A3B8] mt-1">
+            مشخصات پروژه خود را مشخص کنید تا پیام آماده در اکانت تلگرام <span class="font-mono text-[#00F5FF]">@KhodeAli786</span> باز شود.
+          </p>
+        </div>
+
+        <div class="space-y-3.5">
+          <div>
+            <label class="block text-xs font-semibold text-[#CBD5E1] mb-1.5">خدمت یا پروژه مورد نظر</label>
+            <select id="order-service" class="w-full bg-[#171e2e] border border-white/10 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-[#00F5FF]">
+              <option value="web">توسعه وب و وب‌اپلیکیشن مدرن (Next.js / React)</option>
+              <option value="app">توسعه اپلیکیشن موبایل (Flutter / Android)</option>
+              <option value="network">شبکه، سرور و کانفیگ زیرساخت (MikroTik & Cisco)</option>
+              <option value="graphic">طراحی گرافیک، هویت بصری و UI/UX فیگما</option>
+              <option value="consultation">مشاوره فنی، معماری و بهینه‌سازی سیستم</option>
+              <option value="general">همکاری و پروژه سفارشی</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-[#CBD5E1] mb-1.5">نام یا عنوان شما / شرکت</label>
+            <input id="order-name" type="text" placeholder="مثال: علیرضا محمدی" class="w-full bg-[#171e2e] border border-white/10 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-[#00F5FF]" />
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-[#CBD5E1] mb-1.5">توضیحات مختصر نیازمندی یا پروژه</label>
+            <textarea id="order-details" rows="3" placeholder="توضیح دهید به چه قابلیت‌هایی نیاز دارید و محدوده زمانی مدنظرتان چگونه است..." class="w-full bg-[#171e2e] border border-white/10 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-[#00F5FF] resize-none"></textarea>
+          </div>
+        </div>
+
+        <!-- Toast Notification for clipboard -->
+        <div id="copy-toast" class="hidden text-xs text-[#10B981] bg-[#10B981]/10 border border-[#10B981]/20 p-2 rounded-lg text-center">
+          متن پیام با موفقیت در کلیپ‌بورد کپی شد. می‌توانید در تلگرام ارسال نمایید.
+        </div>
+
+        <!-- Modal Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-3 pt-2">
+          <button id="send-telegram-btn" class="btn-primary text-xs py-3 px-5 flex-1 justify-center">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+            </svg>
+            <span>ارسال مستقیم در تلگرام (@KhodeAli786)</span>
+          </button>
+          
+          <button id="copy-text-btn" class="btn-secondary text-xs py-3 px-4 justify-center">
+            کپی متن پیام
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="assets/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تماس و سفارش | علی کرمی</title>
+  <meta name="description" content="راه‌های ارتباطی، مشاوره و ثبت سفارش مستقیم در تلگرام با علی کرمی." />
+  <meta property="og:title" content="تماس و سفارش | علی کرمی" />
+  <meta property="og:description" content="پاسخ‌گویی کمتر از ۲۴ ساعت در تلگرام و اینستاگرام برای هماهنگی پروژه‌های وب، موبایل و شبکه." />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cyan: { DEFAULT: '#00F5FF', dim: '#00bcd4' },
+            violet: { DEFAULT: '#8B5CF6' },
+            emerald: { DEFAULT: '#10B981' },
+            dark: { 900: '#060911', 800: '#0f131d', 700: '#171b26' }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Custom CSS -->
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body class="bg-[#060911] text-[#F8FAFC] antialiased selection:bg-[#00F5FF]/30 selection:text-[#00F5FF]">
+
+  <!-- Top Ambient Glow -->
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-gradient-to-b from-[#00F5FF]/15 via-[#8B5CF6]/10 to-transparent blur-3xl pointer-events-none -z-10"></div>
+
+  <!-- HEADER / NAVBAR -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-[#060911]/80 border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Right: Brand -->
+      <a href="index.html" class="flex items-center gap-3 group text-decoration-none">
+        <img src="assets/logo.svg" alt="Ali Karami Logo" class="w-9 h-9 transition-transform duration-300 group-hover:scale-105" />
+        <div class="flex flex-col">
+          <div class="flex items-center gap-2">
+            <span class="text-base font-bold tracking-tight text-white group-hover:text-[#00F5FF] transition-colors">علی کرمی</span>
+            <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-[#00F5FF]/10 text-[#00F5FF] border border-[#00F5FF]/20 tracking-wider">ARCHITECT</span>
+          </div>
+          <span class="text-[10px] font-mono tracking-widest text-[#94A3B8] uppercase">MULTI-DISCIPLINARY TECH CREATOR</span>
+        </div>
+      </a>
+
+      <!-- Center: Navigation Links -->
+      <nav class="hidden md:flex items-center gap-1 bg-[#0f172a]/60 p-1.5 rounded-xl border border-white/5 backdrop-blur-md">
+        <a href="index.html" class="nav-link px-4 py-2 text-sm font-medium rounded-lg">صفحه اصلی</a>
+        <a href="products.html" class="nav-link px-4 py-2 text-sm font-medium rounded-lg">محصولات و خدمات</a>
+        <a href="about.html" class="nav-link px-4 py-2 text-sm font-medium rounded-lg">درباره من</a>
+        <a href="contact.html" class="nav-link active px-4 py-2 text-sm font-medium rounded-lg">تماس و سفارش</a>
+      </nav>
+
+      <!-- Left: Status & Action -->
+      <div class="hidden sm:flex items-center gap-3">
+        <div class="status-pill">
+          <span class="status-dot"></span>
+          <span class="font-mono text-xs text-[#34D399]">AVAILABLE FOR NEW PROJECTS</span>
+          <span class="text-xs text-[#34D399]/80">●</span>
+        </div>
+        <button data-open-order data-service="general" class="btn-primary text-xs py-2 px-4 shadow-cyan">
+          ثبت سفارش تلگرام
+        </button>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg bg-white/5 border border-white/10 text-[#94A3B8] hover:text-white" aria-label="Toggle Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-6 border-b border-white/10 bg-[#0a0e1a]/95 flex-col gap-2">
+      <a href="index.html" class="nav-link py-2.5 px-3 rounded-lg text-sm">صفحه اصلی</a>
+      <a href="products.html" class="nav-link py-2.5 px-3 rounded-lg text-sm">محصولات و خدمات</a>
+      <a href="about.html" class="nav-link py-2.5 px-3 rounded-lg text-sm">درباره من</a>
+      <a href="contact.html" class="nav-link active py-2.5 px-3 rounded-lg text-sm">تماس و سفارش</a>
+      <div class="pt-3 border-t border-white/5 flex flex-col gap-2">
+        <button data-open-order data-service="general" class="btn-primary text-xs py-2.5 w-full justify-center">
+          ثبت سفارش تلگرام
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+
+    <!-- Section Header -->
+    <div class="text-right space-y-3 max-w-3xl">
+      <div class="section-label">
+        <span>GET IN TOUCH // DISPATCH</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+        راه‌های ارتباطی و سفارش پروژه
+      </h1>
+      <p class="text-base sm:text-lg text-[#94A3B8] leading-relaxed">
+        جهت ثبت سفارش، هماهنگی جلسات مشاوره یا بررسی سیستم‌ها، فرم زیر را تکمیل کنید تا پیام اختصاصی مستقیماً در اکانت تلگرام آماده ارسال شود.
+      </p>
+    </div>
+
+    <!-- Top 3 Quick Channels -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- Telegram Direct -->
+      <a href="https://t.me/KhodeAli786" target="_blank" rel="noopener noreferrer" class="glass-panel p-6 flex items-center justify-between group hover:border-[#00F5FF]/50 transition-all text-decoration-none">
+        <div class="space-y-1">
+          <span class="text-[11px] font-mono text-[#00F5FF] font-semibold">TELEGRAM DIRECT</span>
+          <h4 class="text-lg font-bold font-mono text-white group-hover:text-[#00F5FF] transition-colors" dir="ltr">@KhodeAli786</h4>
+          <p class="text-xs text-[#94A3B8]">سریع‌ترین کانال ارتباطی</p>
+        </div>
+        <div class="w-12 h-12 rounded-xl bg-[#00F5FF]/10 border border-[#00F5FF]/30 flex items-center justify-center text-[#00F5FF] group-hover:scale-110 transition-all">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+          </svg>
+        </div>
+      </a>
+
+      <!-- Instagram Direct -->
+      <a href="https://instagram.com/ali08karami01" target="_blank" rel="noopener noreferrer" class="glass-panel p-6 flex items-center justify-between group hover:border-[#8B5CF6]/50 transition-all text-decoration-none">
+        <div class="space-y-1">
+          <span class="text-[11px] font-mono text-[#8B5CF6] font-semibold">INSTAGRAM</span>
+          <h4 class="text-lg font-bold font-mono text-white group-hover:text-[#8B5CF6] transition-colors" dir="ltr">@ali08karami01</h4>
+          <p class="text-xs text-[#94A3B8]">استوری‌ها و پیام خصوصی</p>
+        </div>
+        <div class="w-12 h-12 rounded-xl bg-[#8B5CF6]/10 border border-[#8B5CF6]/30 flex items-center justify-center text-[#8B5CF6] group-hover:scale-110 transition-all">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </div>
+      </a>
+
+      <!-- Location & Availability -->
+      <div class="glass-panel p-6 flex items-center justify-between">
+        <div class="space-y-1">
+          <span class="text-[11px] font-mono text-[#10B981] font-semibold">LOCATION & HOURS</span>
+          <h4 class="text-base font-bold text-white">کرمانشاه، ایران</h4>
+          <p class="text-xs text-[#94A3B8]">پاسخ‌گویی کمتر از ۲۴ ساعت</p>
+        </div>
+        <div class="w-12 h-12 rounded-xl bg-[#10B981]/10 border border-[#10B981]/30 flex items-center justify-center text-[#10B981]">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MAIN CONTACT FORM & TELEGRAM DISPATCHER -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      
+      <!-- Right Form: Interactive Telegram Dispatch -->
+      <div class="lg:col-span-7 glass-panel p-8 space-y-6 glow-card">
+        <div>
+          <span class="text-xs font-mono text-[#00F5FF] font-semibold">DIRECT INQUIRY BUILDER</span>
+          <h3 class="text-2xl font-bold text-white mt-1">فرم ارسال مستقیم پیام به تلگرام</h3>
+          <p class="text-xs text-[#94A3B8] mt-1">
+            اطلاعات را وارد کنید؛ با فشردن دکمه ارسال، تلگرام شما باز شده و پیام با فرمت مهندسی آماده ارسال خواهد بود.
+          </p>
+        </div>
+
+        <form id="contact-page-form" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-[#CBD5E1] mb-1.5">نام یا عنوان شما</label>
+              <input id="contact-name" type="text" placeholder="مثال: مهندس رضوانی" class="w-full bg-[#131b2e] border border-white/10 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-[#00F5FF]" required />
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-[#CBD5E1] mb-1.5">نوع خدمت مورد نظر</label>
+              <select id="contact-service" class="w-full bg-[#131b2e] border border-white/10 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-[#00F5FF]">
+                <option value="web">توسعه وب و وب‌اپلیکیشن مدرن</option>
+                <option value="app">توسعه اپلیکیشن موبایل چندسکویی</option>
+                <option value="network">زیرساخت شبکه، سرور لینوکس، سیسکو و میکروتیک</option>
+                <option value="graphic">طراحی گرافیک، هویت بصری و دیزاین سیستم</option>
+                <option value="consultation">مشاوره فنی و عیب‌یابی معماری</option>
+                <option value="other">پروژه سفارشی و سایر موارد</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-[#CBD5E1] mb-1.5">محدوده زمان‌بندی مدنظر</label>
+              <input id="contact-timeline" type="text" placeholder="مثال: ۲ الی ۳ هفته کاری" class="w-full bg-[#131b2e] border border-white/10 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-[#00F5FF]" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-[#CBD5E1] mb-1.5">شماره تماس یا آیدی تلگرام شما (اختیاری)</label>
+              <input id="contact-user-id" type="text" placeholder="مثال: @YourUsername" dir="ltr" class="w-full bg-[#131b2e] border border-white/10 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-[#00F5FF] text-left" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-[#CBD5E1] mb-1.5">شرح مختصر نیازمندی‌ها و امکانات پروژه</label>
+            <textarea id="contact-details" rows="4" placeholder="قابلیت‌های اصلی پروژه، فیچرها، اهداف و جزییات فنی مدنظرتان را بنویسید..." class="w-full bg-[#131b2e] border border-white/10 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-[#00F5FF] resize-none" required></textarea>
+          </div>
+
+          <div id="contact-copy-toast" class="hidden text-xs text-[#10B981] bg-[#10B981]/10 border border-[#10B981]/20 p-2.5 rounded-lg text-center font-medium">
+            متن پیام سفارش با موفقیت در کلیپ‌بورد کپی شد. می‌توانید در تلگرام ارسال نمایید.
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-3 pt-2">
+            <button type="submit" class="btn-primary text-sm py-3.5 px-6 flex-1 justify-center">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+              </svg>
+              <span>ارسال در تلگرام (@KhodeAli786)</span>
+            </button>
+
+            <button type="button" id="contact-copy-btn" class="btn-secondary text-sm py-3.5 px-5 justify-center">
+              کپی متن پیام
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Left FAQ & Guarantees -->
+      <div class="lg:col-span-5 space-y-6">
+        
+        <!-- Guarantees Card -->
+        <div class="glass-panel p-6 space-y-4">
+          <span class="text-xs font-mono text-[#10B981] font-semibold">SERVICE COMMITMENTS</span>
+          <h4 class="text-lg font-bold text-white">تعهدات کاری علی کرمی</h4>
+
+          <div class="space-y-3 text-xs text-[#CBD5E1]">
+            <div class="flex items-start gap-2.5">
+              <span class="text-[#00F5FF] text-base mt-0.5">●</span>
+              <div>
+                <strong class="text-white block">شفافیت کامل در هزینه‌ها:</strong>
+                پیش از آغاز کار، تمام جزئیات فنی و مالی به صورت مکتوب و مستند توافق می‌شود.
+              </div>
+            </div>
+
+            <div class="flex items-start gap-2.5">
+              <span class="text-[#8B5CF6] text-base mt-0.5">●</span>
+              <div>
+                <strong class="text-white block">تحویل سورس‌کد و مستندات:</strong>
+                تمامی فایل‌های منبع، کانفیگ‌ها و داکیومنت کامل سیستم به کارفرما تحویل می‌گردد.
+              </div>
+            </div>
+
+            <div class="flex items-start gap-2.5">
+              <span class="text-[#10B981] text-base mt-0.5">●</span>
+              <div>
+                <strong class="text-white block">پشتیبانی و رفع باگ فنی:</strong>
+                پشتیبانی رایگان پس از استقرار برای تضمین کارکرد بی‌نقص سیستم و سرورها.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Accordion -->
+        <div class="glass-panel p-6 space-y-4">
+          <span class="text-xs font-mono text-[#00F5FF] font-semibold">FAQ // پرسش‌های متداول</span>
+          
+          <div class="space-y-3 text-xs">
+            <div class="p-3 rounded-lg bg-black/30 border border-white/5 space-y-1">
+              <h5 class="font-bold text-white">پروژه‌های شبکه چگونه پیاده‌سازی می‌شوند؟</h5>
+              <p class="text-[#94A3B8] leading-relaxed">
+                هم به صورت ریموت (از طریق AnyDesk/SSH/WinBox) و هم با ارائه فایل‌های کانفیگ تست‌شده و آماده بارگذاری در تجهیزات Cisco و MikroTik.
+              </p>
+            </div>
+
+            <div class="p-3 rounded-lg bg-black/30 border border-white/5 space-y-1">
+              <h5 class="font-bold text-white">آیا امکان عقد قرارداد رسمی وجود دارد؟</h5>
+              <p class="text-[#94A3B8] leading-relaxed">
+                بله، برای پروژه‌های سازمانی و شرکتی پیش‌نویس قرارداد همراه با بندهای محرمانگی (NDA) و تعهد تحویل آماده ارائه است.
+              </p>
+            </div>
+
+            <div class="p-3 rounded-lg bg-black/30 border border-white/5 space-y-1">
+              <h5 class="font-bold text-white">چگونه زمان پاسخ‌گویی کمتر از ۲۴ ساعت تضمین می‌شود؟</h5>
+              <p class="text-[#94A3B8] leading-relaxed">
+                پیام‌های ارسالی در تلگرام مستقیم روی دیوایس‌های من نوتیفیکیشن اختصاصی دارند و در طول روز بررسی و پاسخ داده می‌شوند.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-20 border-t border-white/5 bg-[#04070e] py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <img src="assets/logo.svg" alt="Ali Karami" class="w-7 h-7" />
+        <span class="text-sm font-semibold text-white">علی کرمی</span>
+        <span class="text-xs text-[#64748B]">| معمار چندسکویی و زیرساخت شبکه</span>
+      </div>
+
+      <div class="flex items-center gap-6 text-xs text-[#94A3B8]">
+        <a href="index.html" class="hover:text-[#00F5FF] transition-colors">صفحه اصلی</a>
+        <a href="products.html" class="hover:text-[#00F5FF] transition-colors">محصولات و خدمات</a>
+        <a href="about.html" class="hover:text-[#00F5FF] transition-colors">درباره من</a>
+        <a href="contact.html" class="hover:text-[#00F5FF] transition-colors">تماس و سفارش</a>
+      </div>
+
+      <p class="text-xs font-mono text-[#64748B]" dir="ltr">
+        &copy; 2026 Ali Karami. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- TELEGRAM ORDER MODAL (Shared) -->
+  <div id="telegram-order-modal" class="modal-overlay">
+    <div class="modal-container text-right">
+      <button id="modal-close-btn" class="modal-close-btn" aria-label="Close modal">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
+      <div class="space-y-5">
+        <div>
+          <span class="text-xs font-mono text-[#00F5FF] font-semibold">TELEGRAM DIRECT DISPATCH // سفارش آنلاین</span>
+          <h3 class="text-xl font-bold text-white mt-1">ثبت سفارش و پیام مستقیم در تلگرام</h3>
+          <p class="text-xs text-[#94A3B8] mt-1">
+            مشخصات پروژه خود را مشخص کنید تا پیام آماده در اکانت تلگرام <span class="font-mono text-[#00F5FF]">@KhodeAli786</span> باز شود.
+          </p>
+        </div>
+
+        <div class="space-y-3.5">
+          <div>
+            <label class="block text-xs font-semibold text-[#CBD5E1] mb-1.5">خدمت مورد نظر</label>
+            <select id="order-service" class="w-full bg-[#171e2e] border border-white/10 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-[#00F5FF]">
+              <option value="web">توسعه وب و وب‌اپلیکیشن مدرن (Next.js / React)</option>
+              <option value="app">توسعه اپلیکیشن موبایل (Flutter / Android)</option>
+              <option value="network">شبکه، سرور و کانفیگ زیرساخت (MikroTik & Cisco)</option>
+              <option value="graphic">طراحی گرافیک، هویت بصری و UI/UX فیگما</option>
+              <option value="consultation">مشاوره فنی، معماری و بهینه‌سازی سیستم</option>
+              <option value="general">همکاری و پروژه سفارشی</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-[#CBD5E1] mb-1.5">نام یا عنوان شما / شرکت</label>
+            <input id="order-name" type="text" placeholder="مثال: علیرضا محمدی" class="w-full bg-[#171e2e] border border-white/10 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-[#00F5FF]" />
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-[#CBD5E1] mb-1.5">توضیحات مختصر نیازمندی یا پروژه</label>
+            <textarea id="order-details" rows="3" placeholder="توضیح دهید به چه قابلیت‌هایی نیاز دارید..." class="w-full bg-[#171e2e] border border-white/10 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-[#00F5FF] resize-none"></textarea>
+          </div>
+        </div>
+
+        <div id="copy-toast" class="hidden text-xs text-[#10B981] bg-[#10B981]/10 border border-[#10B981]/20 p-2 rounded-lg text-center">
+          متن پیام با موفقیت در کلیپ‌بورد کپی شد.
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3 pt-2">
+          <button id="send-telegram-btn" class="btn-primary text-xs py-3 px-5 flex-1 justify-center">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+            </svg>
+            <span>ارسال مستقیم در تلگرام (@KhodeAli786)</span>
+          </button>
+          
+          <button id="copy-text-btn" class="btn-secondary text-xs py-3 px-4 justify-center">
+            کپی متن پیام
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/main.js"></script>
+  <!-- Contact Form Telegram Generator Script -->
+  <script>
+    const contactForm = document.getElementById('contact-page-form');
+    const contactCopyBtn = document.getElementById('contact-copy-btn');
+    const contactToast = document.getElementById('contact-copy-toast');
+
+    function buildContactMessage() {
+      const name = document.getElementById('contact-name').value.trim() || 'کارفرمای محترم';
+      const serviceSelect = document.getElementById('contact-service');
+      const service = serviceSelect.options[serviceSelect.selectedIndex].text;
+      const timeline = document.getElementById('contact-timeline').value.trim() || 'طبق توافق';
+      const userId = document.getElementById('contact-user-id').value.trim() || 'ذکر نشده';
+      const details = document.getElementById('contact-details').value.trim() || 'بدون جزییات اولیه';
+
+      return `سلام جناب کرمی وقت بخیر،
+درخواست جدید از صفحه تماس وب‌سایت:
+👤 نام: ${name}
+🎯 خدمت: ${service}
+⏱ زمان‌بندی مدنظر: ${timeline}
+📱 راه‌ارتباطی کارفرما: ${userId}
+📝 توضیحات و امکانات مدنظر:
+${details}
+
+ارسال شده از طریق وب‌سایت شخصی Ali Karami`;
+    }
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const msg = buildContactMessage();
+        const url = `https://t.me/KhodeAli786?text=${encodeURIComponent(msg)}`;
+        window.open(url, '_blank');
+      });
+    }
+
+    if (contactCopyBtn) {
+      contactCopyBtn.addEventListener('click', async () => {
+        const msg = buildContactMessage();
+        try {
+          await navigator.clipboard.writeText(msg);
+          if (contactToast) {
+            contactToast.classList.remove('hidden');
+            setTimeout(() => contactToast.classList.add('hidden'), 3500);
+          }
+        } catch (err) {
+          alert('متن پیام کپی شد.');
+        }
+      });
+    }
+  </script>
+</body>
+</html>

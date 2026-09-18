@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>درباره من | علی کرمی - معمار زیرساخت و توسعه‌دهنده</title>
+  <meta name="description" content="آشنایی با پیشینه، تخصص‌ها، سوابق کاری و استانداردهای مهندسی علی کرمی." />
+  <meta property="og:title" content="درباره من | علی کرمی" />
+  <meta property="og:description" content="ترکیب ظرافت هنری در طراحی بصری با استانداردهای مهندسی مدرن در نرم‌افزار و زیرساخت‌های پایدار اینترنت." />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cyan: { DEFAULT: '#00F5FF', dim: '#00bcd4' },
+            violet: { DEFAULT: '#8B5CF6' },
+            emerald: { DEFAULT: '#10B981' },
+            dark: { 900: '#060911', 800: '#0f131d', 700: '#171b26' }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Custom CSS -->
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body class="bg-[#060911] text-[#F8FAFC] antialiased selection:bg-[#00F5FF]/30 selection:text-[#00F5FF]">
+
+  <!-- Top Ambient Glow -->
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-gradient-to-b from-[#8B5CF6]/15 via-[#00F5FF]/10 to-transparent blur-3xl pointer-events-none -z-10"></div>
+
+  <!-- HEADER / NAVBAR -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-[#060911]/80 border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Right: Brand -->
+      <a href="index.html" class="flex items-center gap-3 group text-decoration-none">
+        <img src="assets/logo.svg" alt="Ali Karami Logo" class="w-9 h-9 transition-transform duration-300 group-hover:scale-105" />
+        <div class="flex flex-col">
+          <div class="flex items-center gap-2">
+            <span class="text-base font-bold tracking-tight text-white group-hover:text-[#00F5FF] transition-colors">علی کرمی</span>
+            <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-[#00F5FF]/10 text-[#00F5FF] border border-[#00F5FF]/20 tracking-wider">ARCHITECT</span>
+          </div>
+          <span class="text-[10px] font-mono tracking-widest text-[#94A3B8] uppercase">MULTI-DISCIPLINARY TECH CREATOR</span>
+        </div>
+      </a>
+
+      <!-- Center: Navigation Links -->
+      <nav class="hidden md:flex items-center gap-1 bg-[#0f172a]/60 p-1.5 rounded-xl border border-white/5 backdrop-blur-md">
+        <a href="index.html" class="nav-link px-4 py-2 text-sm font-medium rounded-lg">صفحه اصلی</a>
+        <a href="products.html" class="nav-link px-4 py-2 text-sm font-medium rounded-lg">محصولات و خدمات</a>
+        <a href="about.html" class="nav-link active px-4 py-2 text-sm font-medium rounded-lg">درباره من</a>
+        <a href="contact.html" class="nav-link px-4 py-2 text-sm font-medium rounded-lg">تماس و سفارش</a>
+      </nav>
+
+      <!-- Left: Status & Action -->
+      <div class="hidden sm:flex items-center gap-3">
+        <div class="status-pill">
+          <span class="status-dot"></span>
+          <span class="font-mono text-xs text-[#34D399]">AVAILABLE FOR NEW PROJECTS</span>
+          <span class="text-xs text-[#34D399]/80">●</span>
+        </div>
+        <button data-open-order data-service="general" class="btn-primary text-xs py-2 px-4 shadow-cyan">
+          ثبت سفارش تلگرام
+        </button>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg bg-white/5 border border-white/10 text-[#94A3B8] hover:text-white" aria-label="Toggle Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-6 border-b border-white/10 bg-[#0a0e1a]/95 flex-col gap-2">
+      <a href="index.html" class="nav-link py-2.5 px-3 rounded-lg text-sm">صفحه اصلی</a>
+      <a href="products.html" class="nav-link py-2.5 px-3 rounded-lg text-sm">محصولات و خدمات</a>
+      <a href="about.html" class="nav-link active py-2.5 px-3 rounded-lg text-sm">درباره من</a>
+      <a href="contact.html" class="nav-link py-2.5 px-3 rounded-lg text-sm">تماس و سفارش</a>
+      <div class="pt-3 border-t border-white/5 flex flex-col gap-2">
+        <button data-open-order data-service="general" class="btn-primary text-xs py-2.5 w-full justify-center">
+          ثبت سفارش تلگرام
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-20">
+
+    <!-- Bio & Identity Overview -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      
+      <!-- Right: Detailed Story -->
+      <div class="lg:col-span-7 space-y-6 text-right order-2 lg:order-1">
+        <div class="section-label">
+          <span>ABOUT THE ARCHITECT</span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          تلفیق مهندسی دقیق نرم‌افزار با زیرساخت پایدار و هنر بصری
+        </h1>
+        <p class="text-base sm:text-lg text-[#94A3B8] leading-relaxed">
+          من <span class="text-white font-bold">علی کرمی</span> هستم؛ طراح خلاق، توسعه‌دهنده فول‌استک چندسکویی و معمار زیرساخت شبکه مستقر در کرمانشاه. رویکرد کاری من بر یک اصل بنیادین استوار است: یک محصول دیجیتال زمانی به اوج ارزش می‌رسد که زیبایی بصری، کدهای فوق‌سریع و زیرساخت ارتباطی نفوذناپذیر دست در دست هم داشته باشند.
+        </p>
+        <p class="text-sm sm:text-base text-[#94A3B8] leading-relaxed">
+          در طول بیش از ۴ سال فعالیت حرفه‌ای، پروژه‌های گوناگونی از سامانه‌های مانیتورینگ بلادرنگ، وب‌اپلیکیشن‌های پرترافیک سازمانی، نرم‌افزارهای موبایل تا پیکربندی و ایمن‌سازی ده‌ها روتر میکروتیک و سوییچ سیسکو را با بالاترین کیفیت مهندسی پیاده‌سازی کرده‌ام.
+        </p>
+
+        <!-- Guarantee badges -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+          <div class="p-3 rounded-lg bg-white/5 border border-white/5 text-center">
+            <span class="text-sm font-bold text-[#00F5FF] block">تضمین کیفیت</span>
+            <span class="text-[11px] text-[#94A3B8]">کد استاندارد و مقیاس‌پذیر</span>
+          </div>
+          <div class="p-3 rounded-lg bg-white/5 border border-white/5 text-center">
+            <span class="text-sm font-bold text-[#34D399] block">تحویل به‌موقع</span>
+            <span class="text-[11px] text-[#94A3B8]">۱۰۰٪ پایبندی به موعد</span>
+          </div>
+          <div class="p-3 rounded-lg bg-white/5 border border-white/5 text-center col-span-2 sm:col-span-1">
+            <span class="text-sm font-bold text-[#C4B5FD] block">پشتیبانی فعال</span>
+            <span class="text-[11px] text-[#94A3B8]">پاسخ‌گویی کمتر از ۲۴ ساعت</span>
+          </div>
+        </div>
+
+        <div class="pt-4 flex flex-wrap gap-4">
+          <button data-open-order data-service="general" class="btn-primary text-sm px-6 py-3.5">
+            گفت‌وگو و همکاری با علی کرمی
+          </button>
+          <a href="contact.html" class="btn-secondary text-sm px-6 py-3.5">
+            مشاهده راه‌های تماس
+          </a>
+        </div>
+      </div>
+
+      <!-- Left: Profile Glass Card -->
+      <div class="lg:col-span-5 order-1 lg:order-2 flex justify-center lg:justify-end">
+        <div class="w-full max-w-md glass-panel p-7 space-y-6 glow-card">
+          <div class="text-center space-y-4">
+            <img src="assets/avatar.jpg" alt="علی کرمی" class="w-32 h-32 rounded-full object-cover mx-auto border-4 border-[#00F5FF]/30 shadow-xl shadow-[#00F5FF]/20" />
+            <div>
+              <h3 class="text-2xl font-bold text-white">علی کرمی</h3>
+              <p class="text-xs font-mono text-[#00F5FF] mt-1">SENIOR ARCHITECT & MULTI-DISCIPLINARY TECH CREATOR</p>
+              <p class="text-xs text-[#94A3B8] mt-1 flex items-center justify-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-[#00F5FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
+                <span>کرمانشاه، ایران // پاسخ‌گویی آنلاین</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Quick Stats -->
+          <div class="grid grid-cols-3 gap-2.5 pt-4 border-t border-white/10 text-center">
+            <div class="bg-black/30 p-3 rounded-lg">
+              <span class="stat-num text-xl font-bold text-[#00F5FF]">4+</span>
+              <p class="text-[10px] text-[#94A3B8] mt-0.5">سال تجربه</p>
+            </div>
+            <div class="bg-black/30 p-3 rounded-lg">
+              <span class="stat-num text-xl font-bold text-[#8B5CF6]">15+</span>
+              <p class="text-[10px] text-[#94A3B8] mt-0.5">پروژه موفق</p>
+            </div>
+            <div class="bg-black/30 p-3 rounded-lg">
+              <span class="stat-num text-xl font-bold text-[#10B981]">100%</span>
+              <p class="text-[10px] text-[#94A3B8] mt-0.5">رضایت و تحویل</p>
+            </div>
+          </div>
+
+          <!-- Social Direct IDs -->
+          <div class="space-y-2 pt-2 text-xs font-mono">
+            <div class="flex items-center justify-between p-2.5 rounded bg-black/40 border border-white/5">
+              <span class="text-[#94A3B8]">TELEGRAM:</span>
+              <a href="https://t.me/KhodeAli786" target="_blank" class="text-[#00F5FF] hover:underline" dir="ltr">@KhodeAli786</a>
+            </div>
+            <div class="flex items-center justify-between p-2.5 rounded bg-black/40 border border-white/5">
+              <span class="text-[#94A3B8]">INSTAGRAM:</span>
+              <a href="https://instagram.com/ali08karami01" target="_blank" class="text-[#8B5CF6] hover:underline" dir="ltr">@ali08karami01</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SKILLS MATRIX -->
+    <section class="space-y-8">
+      <div class="text-right space-y-2">
+        <div class="section-label">
+          <span>TECHNICAL ARSENAL</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+          جعبه‌ابزار مهندسی و تسلط فنی
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Web & Backend Matrix -->
+        <div class="glass-panel p-6 space-y-5">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+              <span class="text-[#00F5FF]">🌐</span> توسعه فرانت‌اند و وب مدرن
+            </h3>
+            <span class="text-xs font-mono text-[#00F5FF]">WEB PILLAR</span>
+          </div>
+
+          <div class="space-y-4 text-xs font-mono">
+            <div>
+              <div class="flex justify-between text-[#CBD5E1] mb-1">
+                <span>Next.js / React / TypeScript</span>
+                <span>95%</span>
+              </div>
+              <div class="h-1.5 bg-black/40 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-[#00F5FF] to-[#8B5CF6] w-[95%] rounded-full"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-[#CBD5E1] mb-1">
+                <span>Tailwind CSS / Motion / Glass UI</span>
+                <span>98%</span>
+              </div>
+              <div class="h-1.5 bg-black/40 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-[#00F5FF] to-[#8B5CF6] w-[98%] rounded-full"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-[#CBD5E1] mb-1">
+                <span>Node.js / Express / REST & WebSocket</span>
+                <span>90%</span>
+              </div>
+              <div class="h-1.5 bg-black/40 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-[#00F5FF] to-[#8B5CF6] w-[90%] rounded-full"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Network & Infrastructure Matrix -->
+        <div class="glass-panel p-6 space-y-5">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+              <span class="text-[#38BDF8]">⚡</span> زیرساخت شبکه، سرور و لینوکس
+            </h3>
+            <span class="text-xs font-mono text-[#38BDF8]">INFRASTRUCTURE</span>
+          </div>
+
+          <div class="space-y-4 text-xs font-mono">
+            <div>
+              <div class="flex justify-between text-[#CBD5E1] mb-1">
+                <span>MikroTik RouterOS (Routing, Mangle, Queue)</span>
+                <span>96%</span>
+              </div>
+              <div class="h-1.5 bg-black/40 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-[#38BDF8] to-[#00F5FF] w-[96%] rounded-full"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-[#CBD5E1] mb-1">
+                <span>Cisco CCNA (Switching, VLAN, Trunk, ACL)</span>
+                <span>92%</span>
+              </div>
+              <div class="h-1.5 bg-black/40 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-[#38BDF8] to-[#00F5FF] w-[92%] rounded-full"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-[#CBD5E1] mb-1">
+                <span>Linux SysAdmin (Ubuntu, Debian, WireGuard VPN)</span>
+                <span>94%</span>
+              </div>
+              <div class="h-1.5 bg-black/40 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-[#38BDF8] to-[#00F5FF] w-[94%] rounded-full"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile App Matrix -->
+        <div class="glass-panel p-6 space-y-5">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+              <span class="text-[#34D399]">📱</span> اپلیکیشن موبایل چندسکویی
+            </h3>
+            <span class="text-xs font-mono text-[#34D399]">MOBILE PILLAR</span>
+          </div>
+
+          <div class="space-y-4 text-xs font-mono">
+            <div>
+              <div class="flex justify-between text-[#CBD5E1] mb-1">
+                <span>Flutter & Dart (BLoC Architecture)</span>
+                <span>92%</span>
+              </div>
+              <div class="h-1.5 bg-black/40 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-[#10B981] to-[#34D399] w-[92%] rounded-full"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-[#CBD5E1] mb-1">
+                <span>Native Android & Performance Tuning</span>
+                <span>88%</span>
+              </div>
+              <div class="h-1.5 bg-black/40 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-[#10B981] to-[#34D399] w-[88%] rounded-full"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- UI/UX & Visual Art Matrix -->
+        <div class="glass-panel p-6 space-y-5">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+              <span class="text-[#8B5CF6]">🎨</span> هویت بصری و دیزاین سیستم
+            </h3>
+            <span class="text-xs font-mono text-[#8B5CF6]">VISUAL ART</span>
+          </div>
+
+          <div class="space-y-4 text-xs font-mono">
+            <div>
+              <div class="flex justify-between text-[#CBD5E1] mb-1">
+                <span>Figma UI/UX & Auto-layout Systems</span>
+                <span>95%</span>
+              </div>
+              <div class="h-1.5 bg-black/40 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-[#8B5CF6] to-[#C4B5FD] w-[95%] rounded-full"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-[#CBD5E1] mb-1">
+                <span>Adobe Illustrator, Photoshop & 3D Mockup</span>
+                <span>90%</span>
+              </div>
+              <div class="h-1.5 bg-black/40 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-[#8B5CF6] to-[#C4B5FD] w-[90%] rounded-full"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- METHODOLOGY -->
+    <section class="space-y-8">
+      <div class="text-right space-y-2">
+        <div class="section-label">
+          <span>WORKFLOW & METHODOLOGY</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+          فرآیند اجرای پروژه‌ها از ایده تا تحویل
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="glass-card p-5 space-y-3">
+          <span class="stat-num text-xl font-bold text-[#00F5FF]">01 //</span>
+          <h4 class="text-base font-bold text-white">بررسی و نیازسنجی</h4>
+          <p class="text-xs text-[#94A3B8] leading-relaxed">
+            برگزاری جلسه مشاوره در تلگرام، بررسی جامع معماری سیستم و تعیین دقیق دامنه‌ی پروژه و نیازمندی‌ها.
+          </p>
+        </div>
+
+        <div class="glass-card p-5 space-y-3">
+          <span class="stat-num text-xl font-bold text-[#8B5CF6]">02 //</span>
+          <h4 class="text-base font-bold text-white">معماری و پروتوتایپ</h4>
+          <p class="text-xs text-[#94A3B8] leading-relaxed">
+            طراحی وایرفریم‌ها، پروتکل‌های ارتباطی، دیاگرام شبکه یا پروتوتایپ تعاملی فیگما قبل از آغاز کدنویسی.
+          </p>
+        </div>
+
+        <div class="glass-card p-5 space-y-3">
+          <span class="stat-num text-xl font-bold text-[#10B981]">03 //</span>
+          <h4 class="text-base font-bold text-white">پیاده‌سازی تمیز</h4>
+          <p class="text-xs text-[#94A3B8] leading-relaxed">
+            کدنویسی تمیز بر پایه اصول مدرن مهندسی، معماری ماژولار، تست‌های عملکردی و تست پایداری زیر ترافیک.
+          </p>
+        </div>
+
+        <div class="glass-card p-5 space-y-3">
+          <span class="stat-num text-xl font-bold text-[#38BDF8]">04 //</span>
+          <h4 class="text-base font-bold text-white">استقرار و پشتیبانی</h4>
+          <p class="text-xs text-[#94A3B8] leading-relaxed">
+            استقرار روی سرورهای ابری یا سخت‌افزار کارفرما، ارائه مستندات شفاف و پشتیبانی مداوم رفع اشکال.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-20 border-t border-white/5 bg-[#04070e] py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <img src="assets/logo.svg" alt="Ali Karami" class="w-7 h-7" />
+        <span class="text-sm font-semibold text-white">علی کرمی</span>
+        <span class="text-xs text-[#64748B]">| معمار چندسکویی و زیرساخت شبکه</span>
+      </div>
+
+      <div class="flex items-center gap-6 text-xs text-[#94A3B8]">
+        <a href="index.html" class="hover:text-[#00F5FF] transition-colors">صفحه اصلی</a>
+        <a href="products.html" class="hover:text-[#00F5FF] transition-colors">محصولات و خدمات</a>
+        <a href="about.html" class="hover:text-[#00F5FF] transition-colors">درباره من</a>
+        <a href="contact.html" class="hover:text-[#00F5FF] transition-colors">تماس و سفارش</a>
+      </div>
+
+      <p class="text-xs font-mono text-[#64748B]" dir="ltr">
+        &copy; 2026 Ali Karami. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- TELEGRAM ORDER MODAL -->
+  <div id="telegram-order-modal" class="modal-overlay">
+    <div class="modal-container text-right">
+      <button id="modal-close-btn" class="modal-close-btn" aria-label="Close modal">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
+      <div class="space-y-5">
+        <div>
+          <span class="text-xs font-mono text-[#00F5FF] font-semibold">TELEGRAM DIRECT DISPATCH // سفارش آنلاین</span>
+          <h3 class="text-xl font-bold text-white mt-1">ثبت سفارش و پیام مستقیم در تلگرام</h3>
+          <p class="text-xs text-[#94A3B8] mt-1">
+            مشخصات پروژه خود را مشخص کنید تا پیام آماده در اکانت تلگرام <span class="font-mono text-[#00F5FF]">@KhodeAli786</span> باز شود.
+          </p>
+        </div>
+
+        <div class="space-y-3.5">
+          <div>
+            <label class="block text-xs font-semibold text-[#CBD5E1] mb-1.5">خدمت مورد نظر</label>
+            <select id="order-service" class="w-full bg-[#171e2e] border border-white/10 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-[#00F5FF]">
+              <option value="web">توسعه وب و وب‌اپلیکیشن مدرن (Next.js / React)</option>
+              <option value="app">توسعه اپلیکیشن موبایل (Flutter / Android)</option>
+              <option value="network">شبکه، سرور و کانفیگ زیرساخت (MikroTik & Cisco)</option>
+              <option value="graphic">طراحی گرافیک، هویت بصری و UI/UX فیگما</option>
+              <option value="consultation">مشاوره فنی، معماری و بهینه‌سازی سیستم</option>
+              <option value="general">همکاری و پروژه سفارشی</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-[#CBD5E1] mb-1.5">نام یا عنوان شما / شرکت</label>
+            <input id="order-name" type="text" placeholder="مثال: علیرضا محمدی" class="w-full bg-[#171e2e] border border-white/10 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-[#00F5FF]" />
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-[#CBD5E1] mb-1.5">توضیحات مختصر نیازمندی یا پروژه</label>
+            <textarea id="order-details" rows="3" placeholder="توضیح دهید به چه قابلیت‌هایی نیاز دارید و محدوده زمانی مدنظرتان چگونه است..." class="w-full bg-[#171e2e] border border-white/10 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-[#00F5FF] resize-none"></textarea>
+          </div>
+        </div>
+
+        <div id="copy-toast" class="hidden text-xs text-[#10B981] bg-[#10B981]/10 border border-[#10B981]/20 p-2 rounded-lg text-center">
+          متن پیام با موفقیت در کلیپ‌بورد کپی شد. می‌توانید در تلگرام ارسال نمایید.
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3 pt-2">
+          <button id="send-telegram-btn" class="btn-primary text-xs py-3 px-5 flex-1 justify-center">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+            </svg>
+            <span>ارسال مستقیم در تلگرام (@KhodeAli786)</span>
+          </button>
+          
+          <button id="copy-text-btn" class="btn-secondary text-xs py-3 px-4 justify-center">
+            کپی متن پیام
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>

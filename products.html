@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>محصولات و خدمات | علی کرمی</title>
+  <meta name="description" content="فهرست کامل خدمات و محصولات نرم‌افزاری، طراحی UI/UX و زیرساخت شبکه علی کرمی." />
+  <meta property="og:title" content="محصولات و خدمات | علی کرمی" />
+  <meta property="og:description" content="راهکارهای تخصصی در توسعه وب، اپلیکیشن موبایل، سرور و امنیت شبکه." />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cyan: { DEFAULT: '#00F5FF', dim: '#00bcd4' },
+            violet: { DEFAULT: '#8B5CF6' },
+            emerald: { DEFAULT: '#10B981' },
+            dark: { 900: '#060911', 800: '#0f131d', 700: '#171b26' }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Custom CSS -->
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body class="bg-[#060911] text-[#F8FAFC] antialiased selection:bg-[#00F5FF]/30 selection:text-[#00F5FF]">
+
+  <!-- Top Ambient Glow -->
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-gradient-to-b from-[#00F5FF]/15 via-[#8B5CF6]/10 to-transparent blur-3xl pointer-events-none -z-10"></div>
+
+  <!-- HEADER / NAVBAR -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-[#060911]/80 border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Right: Brand -->
+      <a href="index.html" class="flex items-center gap-3 group text-decoration-none">
+        <img src="assets/logo.svg" alt="Ali Karami Logo" class="w-9 h-9 transition-transform duration-300 group-hover:scale-105" />
+        <div class="flex flex-col">
+          <div class="flex items-center gap-2">
+            <span class="text-base font-bold tracking-tight text-white group-hover:text-[#00F5FF] transition-colors">علی کرمی</span>
+            <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-[#00F5FF]/10 text-[#00F5FF] border border-[#00F5FF]/20 tracking-wider">ARCHITECT</span>
+          </div>
+          <span class="text-[10px] font-mono tracking-widest text-[#94A3B8] uppercase">MULTI-DISCIPLINARY TECH CREATOR</span>
+        </div>
+      </a>
+
+      <!-- Center: Navigation Links -->
+      <nav class="hidden md:flex items-center gap-1 bg-[#0f172a]/60 p-1.5 rounded-xl border border-white/5 backdrop-blur-md">
+        <a href="index.html" class="nav-link px-4 py-2 text-sm font-medium rounded-lg">صفحه اصلی</a>
+        <a href="products.html" class="nav-link active px-4 py-2 text-sm font-medium rounded-lg">محصولات و خدمات</a>
+        <a href="about.html" class="nav-link px-4 py-2 text-sm font-medium rounded-lg">درباره من</a>
+        <a href="contact.html" class="nav-link px-4 py-2 text-sm font-medium rounded-lg">تماس و سفارش</a>
+      </nav>
+
+      <!-- Left: Status & Action -->
+      <div class="hidden sm:flex items-center gap-3">
+        <div class="status-pill">
+          <span class="status-dot"></span>
+          <span class="font-mono text-xs text-[#34D399]">AVAILABLE FOR NEW PROJECTS</span>
+          <span class="text-xs text-[#34D399]/80">●</span>
+        </div>
+        <button data-open-order data-service="general" class="btn-primary text-xs py-2 px-4 shadow-cyan">
+          ثبت سفارش تلگرام
+        </button>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg bg-white/5 border border-white/10 text-[#94A3B8] hover:text-white" aria-label="Toggle Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-6 border-b border-white/10 bg-[#0a0e1a]/95 flex-col gap-2">
+      <a href="index.html" class="nav-link py-2.5 px-3 rounded-lg text-sm">صفحه اصلی</a>
+      <a href="products.html" class="nav-link active py-2.5 px-3 rounded-lg text-sm">محصولات و خدمات</a>
+      <a href="about.html" class="nav-link py-2.5 px-3 rounded-lg text-sm">درباره من</a>
+      <a href="contact.html" class="nav-link py-2.5 px-3 rounded-lg text-sm">تماس و سفارش</a>
+      <div class="pt-3 border-t border-white/5 flex flex-col gap-2">
+        <button data-open-order data-service="general" class="btn-primary text-xs py-2.5 w-full justify-center">
+          ثبت سفارش تلگرام
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+
+    <!-- Hero / Title -->
+    <div class="text-right space-y-4 max-w-3xl">
+      <div class="section-label">
+        <span>PRODUCTS & SERVICES CATALOG</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+        محصولات، خدمات و پکیج‌های تخصصی
+      </h1>
+      <p class="text-base sm:text-lg text-[#94A3B8] leading-relaxed">
+        ارائه راهکارهای استاندارد مهندسی در ۴ رکن اصلی: نرم‌افزار وب مدرن، اپلیکیشن چندسکویی، معماری زیرساخت شبکه و هویت بصری محصول با تضمین پایداری و موعد تحویل.
+      </p>
+    </div>
+
+    <!-- Category Filter Tabs -->
+    <div class="flex flex-wrap items-center gap-2 border-b border-white/10 pb-4" id="category-filters">
+      <button class="filter-btn active px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all bg-[#00F5FF]/10 text-[#00F5FF] border border-[#00F5FF]/30" data-filter="all">همه خدمات</button>
+      <button class="filter-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all text-[#94A3B8] hover:text-white border border-transparent hover:border-white/10" data-filter="web">توسعه وب مدرن</button>
+      <button class="filter-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all text-[#94A3B8] hover:text-white border border-transparent hover:border-white/10" data-filter="app">اپلیکیشن موبایل</button>
+      <button class="filter-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all text-[#94A3B8] hover:text-white border border-transparent hover:border-white/10" data-filter="network">زیرساخت و امنیت شبکه</button>
+      <button class="filter-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all text-[#94A3B8] hover:text-white border border-transparent hover:border-white/10" data-filter="graphic">هویت بصری و UI/UX</button>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="products-grid">
+      
+      <!-- Item 1: Web App Enterprise -->
+      <div class="product-item glass-panel p-6 flex flex-col justify-between space-y-6" data-category="web">
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-mono text-[#00F5FF] font-semibold">WEB DEVELOPMENT</span>
+            <span class="text-[11px] font-mono text-[#34D399]">READY TO DEPLOY</span>
+          </div>
+          <h3 class="text-xl font-bold text-white">توسعه وب‌اپلیکیشن اختصاصی Next.js</h3>
+          <p class="text-xs sm:text-sm text-[#94A3B8] leading-relaxed">
+            برنامه‌نویسی فول‌استک با SSR، رندرینگ سریع و بهینه‌سازی لایت‌هاوس ۹۹+ با تایپ‌اسکریپت و امنیت بالا.
+          </p>
+          <ul class="space-y-1.5 text-xs text-[#CBD5E1] pt-2">
+            <li class="flex items-center gap-2">
+              <span class="text-[#00F5FF]">✔</span> طراحی کامپوننت‌محور با Tailwind CSS
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-[#00F5FF]">✔</span> بک‌اند بهینه، REST API و وب‌سوکت
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-[#00F5FF]">✔</span> سئو و بهینه‌سازی سرعت استاندارد گوگل
+            </li>
+          </ul>
+        </div>
+        <div class="pt-4 border-t border-white/5 flex items-center justify-between">
+          <span class="text-xs font-mono text-[#94A3B8]">تحویل: ۷ الی ۱۴ روز کاری</span>
+          <button data-open-order data-service="web" class="btn-primary text-xs py-2 px-4">
+            سفارش در تلگرام
+          </button>
+        </div>
+      </div>
+
+      <!-- Item 2: Network Monitoring Dashboard -->
+      <div class="product-item glass-panel p-6 flex flex-col justify-between space-y-6" data-category="web" data-category-sec="network">
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-mono text-[#00F5FF] font-semibold">DASHBOARD & TELEMETRY</span>
+            <span class="text-[11px] font-mono text-[#8B5CF6]">ENTERPRISE</span>
+          </div>
+          <h3 class="text-xl font-bold text-white">داشبورد زنده پایش سرور و ترافیک شبکه</h3>
+          <p class="text-xs sm:text-sm text-[#94A3B8] leading-relaxed">
+            سامانه تحت وب مانیتورینگ بلادرنگ سرورها، پروتکل SNMP، گزارش‌گیری دوره‌ای و اعلان قطعی‌ها در پیام‌رسان‌ها.
+          </p>
+          <ul class="space-y-1.5 text-xs text-[#CBD5E1] pt-2">
+            <li class="flex items-center gap-2">
+              <span class="text-[#00F5FF]">✔</span> نمودارهای تعاملی زنده و پینگ خودکار
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-[#00F5FF]">✔</span> هشداردهی هوشمند قطعی به تلگرام و ایمیل
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-[#00F5FF]">✔</span> اتصال مستقیم به RouterOS و Cisco
+            </li>
+          </ul>
+        </div>
+        <div class="pt-4 border-t border-white/5 flex items-center justify-between">
+          <span class="text-xs font-mono text-[#94A3B8]">تحویل: ۱۰ الی ۲۰ روز کاری</span>
+          <button data-open-order data-service="network" class="btn-primary text-xs py-2 px-4">
+            سفارش در تلگرام
+          </button>
+        </div>
+      </div>
+
+      <!-- Item 3: Flutter Mobile App -->
+      <div class="product-item glass-panel p-6 flex flex-col justify-between space-y-6" data-category="app">
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-mono text-[#34D399] font-semibold">MOBILE APP</span>
+            <span class="text-[11px] font-mono text-[#00F5FF]">CROSS-PLATFORM</span>
+          </div>
+          <h3 class="text-xl font-bold text-white">اپلیکیشن چندسکویی Flutter (اندروید و iOS)</h3>
+          <p class="text-xs sm:text-sm text-[#94A3B8] leading-relaxed">
+            ساخت اپلیکیشن نیتیو با معماری تمیز BLoC، عملکرد ۶۰ فریم بر ثانیه، حالت آفلاین و سینک خودکار داده‌ها.
+          </p>
+          <ul class="space-y-1.5 text-xs text-[#CBD5E1] pt-2">
+            <li class="flex items-center gap-2">
+              <span class="text-[#34D399]">✔</span> رابط کاربری مدرن و واکنش‌گرا
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-[#34D399]">✔</span> پشتیبانی از پوش نوتیفیکیشن و درگاه پرداخت
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-[#34D399]">✔</span> خروجی همزمان اندروید (APK/AAB) و وب
+            </li>
+          </ul>
+        </div>
+        <div class="pt-4 border-t border-white/5 flex items-center justify-between">
+          <span class="text-xs font-mono text-[#94A3B8]">تحویل: ۱۵ الی ۲۵ روز کاری</span>
+          <button data-open-order data-service="app" class="btn-primary text-xs py-2 px-4">
+            سفارش در تلگرام
+          </button>
+        </div>
+      </div>
+
+      <!-- Item 4: Network & Cisco Infrastructure -->
+      <div class="product-item glass-panel p-6 flex flex-col justify-between space-y-6" data-category="network">
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-mono text-[#38BDF8] font-semibold">INFRASTRUCTURE</span>
+            <span class="text-[11px] font-mono text-[#00F5FF]">CISCO / MIKROTIK</span>
+          </div>
+          <h3 class="text-xl font-bold text-white">کانفیگ و امن‌سازی زیرساخت شبکه و سرور</h3>
+          <p class="text-xs sm:text-sm text-[#94A3B8] leading-relaxed">
+            طراحی توپولوژی شبکه سازمانی، پیاده‌سازی فایروال لایه ۷، اینترنت با Failover دوگانه و تانل‌های رمزنگاری شده.
+          </p>
+          <ul class="space-y-1.5 text-xs text-[#CBD5E1] pt-2">
+            <li class="flex items-center gap-2">
+              <span class="text-[#38BDF8]">✔</span> کانفیگ روترهای میکروتیک و سوییچ‌های سیسکو
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-[#38BDF8]">✔</span> تانل امن WireGuard، BGP و OSPF
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-[#38BDF8]">✔</span> ایمن‌سازی سرورهای لینوکس (Debian/Ubuntu)
+            </li>
+          </ul>
+        </div>
+        <div class="pt-4 border-t border-white/5 flex items-center justify-between">
+          <span class="text-xs font-mono text-[#94A3B8]">تحویل: ۲ الی ۵ روز کاری</span>
+          <button data-open-order data-service="network" class="btn-primary text-xs py-2 px-4">
+            سفارش در تلگرام
+          </button>
+        </div>
+      </div>
+
+      <!-- Item 5: Visual Brand Identity & UI/UX -->
+      <div class="product-item glass-panel p-6 flex flex-col justify-between space-y-6" data-category="graphic">
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-mono text-[#C4B5FD] font-semibold">BRANDING & UI/UX</span>
+            <span class="text-[11px] font-mono text-[#8B5CF6]">FIGMA</span>
+          </div>
+          <h3 class="text-xl font-bold text-white">طراحی دیزاین سیستم، هویت بصری و لوگوتایپ</h3>
+          <p class="text-xs sm:text-sm text-[#94A3B8] leading-relaxed">
+            طراحی هویت برند منسجم، لوگوی مینیمال هندسی، پالت رنگی سایبرنتیک، کتابچه برند (Brand Guide) و پروتوتایپ فیگما.
+          </p>
+          <ul class="space-y-1.5 text-xs text-[#CBD5E1] pt-2">
+            <li class="flex items-center gap-2">
+              <span class="text-[#C4B5FD]">✔</span> لوگوتایپ مفهومی دوزبانه فارسی و انگلیسی
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-[#C4B5FD]">✔</span> دیزاین سیستم آماده کد در فیگما با اتولایوت
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-[#C4B5FD]">✔</span> فایل‌های برداری وکتور SVG، AI و موکاپ
+            </li>
+          </ul>
+        </div>
+        <div class="pt-4 border-t border-white/5 flex items-center justify-between">
+          <span class="text-xs font-mono text-[#94A3B8]">تحویل: ۵ الی ۱۰ روز کاری</span>
+          <button data-open-order data-service="graphic" class="btn-primary text-xs py-2 px-4">
+            سفارش در تلگرام
+          </button>
+        </div>
+      </div>
+
+      <!-- Item 6: Technical Consulting & Audit -->
+      <div class="product-item glass-panel p-6 flex flex-col justify-between space-y-6" data-category="network" data-category-sec="web">
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-mono text-[#00F5FF] font-semibold">CONSULTING & AUDIT</span>
+            <span class="text-[11px] font-mono text-[#34D399]">1-ON-1</span>
+          </div>
+          <h3 class="text-xl font-bold text-white">مشاوره فنی، عیب‌یابی و معماری سیستم</h3>
+          <p class="text-xs sm:text-sm text-[#94A3B8] leading-relaxed">
+            بررسی جامع معماری نرم‌افزار، عیب‌یابی اختلالات شبکه و ترافیک اینترنت، بهینه‌سازی دیتابیس و راهنمایی اجرایی.
+          </p>
+          <ul class="space-y-1.5 text-xs text-[#CBD5E1] pt-2">
+            <li class="flex items-center gap-2">
+              <span class="text-[#00F5FF]">✔</span> جلسه آنلاین صوتی/تصویری اختصاصی
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-[#00F5FF]">✔</span> ارائه گزارش مستندات و چک‌لیست اصلاحات
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-[#00F5FF]">✔</span> پشتیبانی پاسخ‌گویی سریع بعد از جلسه
+            </li>
+          </ul>
+        </div>
+        <div class="pt-4 border-t border-white/5 flex items-center justify-between">
+          <span class="text-xs font-mono text-[#94A3B8]">پاسخ‌گویی: کمتر از ۲۴ ساعت</span>
+          <button data-open-order data-service="consultation" class="btn-primary text-xs py-2 px-4">
+            سفارش در تلگرام
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Direct Custom Inquiry Banner -->
+    <div class="glass-panel p-8 flex flex-col sm:flex-row items-center justify-between gap-6 border border-[#00F5FF]/30 glow-card">
+      <div class="space-y-2 text-right">
+        <span class="text-xs font-mono text-[#00F5FF]">CUSTOM REQUIREMENTS</span>
+        <h3 class="text-2xl font-bold text-white">نیاز به پکیج ترکیبی یا پروژه سفارشی دارید؟</h3>
+        <p class="text-xs sm:text-sm text-[#94A3B8]">
+          می‌توانید شرح نیازمندی‌های سیستم را مستقیماً در تلگرام مطرح نمایید تا برآورد هزینه و زمان‌بندی دقیق انجام شود.
+        </p>
+      </div>
+      <button data-open-order data-service="general" class="btn-primary whitespace-nowrap text-sm px-6 py-3.5">
+        شروع گفت‌وگو در تلگرام
+      </button>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-20 border-t border-white/5 bg-[#04070e] py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <img src="assets/logo.svg" alt="Ali Karami" class="w-7 h-7" />
+        <span class="text-sm font-semibold text-white">علی کرمی</span>
+        <span class="text-xs text-[#64748B]">| معمار چندسکویی و زیرساخت شبکه</span>
+      </div>
+
+      <div class="flex items-center gap-6 text-xs text-[#94A3B8]">
+        <a href="index.html" class="hover:text-[#00F5FF] transition-colors">صفحه اصلی</a>
+        <a href="products.html" class="hover:text-[#00F5FF] transition-colors">محصولات و خدمات</a>
+        <a href="about.html" class="hover:text-[#00F5FF] transition-colors">درباره من</a>
+        <a href="contact.html" class="hover:text-[#00F5FF] transition-colors">تماس و سفارش</a>
+      </div>
+
+      <p class="text-xs font-mono text-[#64748B]" dir="ltr">
+        &copy; 2026 Ali Karami. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- TELEGRAM ORDER MODAL -->
+  <div id="telegram-order-modal" class="modal-overlay">
+    <div class="modal-container text-right">
+      <button id="modal-close-btn" class="modal-close-btn" aria-label="Close modal">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
+      <div class="space-y-5">
+        <div>
+          <span class="text-xs font-mono text-[#00F5FF] font-semibold">TELEGRAM DIRECT DISPATCH // سفارش آنلاین</span>
+          <h3 class="text-xl font-bold text-white mt-1">ثبت سفارش و پیام مستقیم در تلگرام</h3>
+          <p class="text-xs text-[#94A3B8] mt-1">
+            مشخصات پروژه خود را مشخص کنید تا پیام آماده در اکانت تلگرام <span class="font-mono text-[#00F5FF]">@KhodeAli786</span> باز شود.
+          </p>
+        </div>
+
+        <div class="space-y-3.5">
+          <div>
+            <label class="block text-xs font-semibold text-[#CBD5E1] mb-1.5">خدمت یا محصول مورد نظر</label>
+            <select id="order-service" class="w-full bg-[#171e2e] border border-white/10 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-[#00F5FF]">
+              <option value="web">توسعه وب و وب‌اپلیکیشن مدرن (Next.js / React)</option>
+              <option value="app">توسعه اپلیکیشن موبایل (Flutter / Android)</option>
+              <option value="network">شبکه، سرور و کانفیگ زیرساخت (MikroTik & Cisco)</option>
+              <option value="graphic">طراحی گرافیک، هویت بصری و UI/UX فیگما</option>
+              <option value="consultation">مشاوره فنی، معماری و بهینه‌سازی سیستم</option>
+              <option value="general">همکاری و پروژه سفارشی</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-[#CBD5E1] mb-1.5">نام یا عنوان شما / شرکت</label>
+            <input id="order-name" type="text" placeholder="مثال: علیرضا محمدی" class="w-full bg-[#171e2e] border border-white/10 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-[#00F5FF]" />
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-[#CBD5E1] mb-1.5">توضیحات مختصر نیازمندی یا پروژه</label>
+            <textarea id="order-details" rows="3" placeholder="توضیح دهید به چه قابلیت‌هایی نیاز دارید و محدوده زمانی مدنظرتان چگونه است..." class="w-full bg-[#171e2e] border border-white/10 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-[#00F5FF] resize-none"></textarea>
+          </div>
+        </div>
+
+        <div id="copy-toast" class="hidden text-xs text-[#10B981] bg-[#10B981]/10 border border-[#10B981]/20 p-2 rounded-lg text-center">
+          متن پیام با موفقیت در کلیپ‌بورد کپی شد. می‌توانید در تلگرام ارسال نمایید.
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3 pt-2">
+          <button id="send-telegram-btn" class="btn-primary text-xs py-3 px-5 flex-1 justify-center">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+            </svg>
+            <span>ارسال مستقیم در تلگرام (@KhodeAli786)</span>
+          </button>
+          
+          <button id="copy-text-btn" class="btn-secondary text-xs py-3 px-4 justify-center">
+            کپی متن پیام
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/main.js"></script>
+  <!-- Category filter handler -->
+  <script>
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => {
+          b.classList.remove('active', 'bg-[#00F5FF]/10', 'text-[#00F5FF]', 'border-[#00F5FF]/30');
+          b.classList.add('text-[#94A3B8]', 'border-transparent');
+        });
+        btn.classList.add('active', 'bg-[#00F5FF]/10', 'text-[#00F5FF]', 'border-[#00F5FF]/30');
+        btn.classList.remove('text-[#94A3B8]', 'border-transparent');
+
+        const filter = btn.getAttribute('data-filter');
+        document.querySelectorAll('.product-item').forEach(item => {
+          if (filter === 'all') {
+            item.style.display = 'flex';
+          } else {
+            const cat1 = item.getAttribute('data-category');
+            const cat2 = item.getAttribute('data-category-sec');
+            if (cat1 === filter || cat2 === filter) {
+              item.style.display = 'flex';
+            } else {
+              item.style.display = 'none';
+            }
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
